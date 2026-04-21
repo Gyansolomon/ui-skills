@@ -2,15 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 import { skills } from "../data/skills";
 import { CopyButton } from "../ui/copy-button";
-import CodeBlock from "../ui/code-block.astro";
 import { InstallTabs } from "../ui/install-tabs";
 import ExpandableCodeBlock from "../ui/expandable-code-block.astro";
 
-const skillList = skills;
+const repoSkillSlugs = [
+  "baseline-ui",
+  "fixing-accessibility",
+  "fixing-metadata",
+  "fixing-motion-performance",
+];
+const curatedSkillSlugs = [
+  "rams",
+  "bencium-innovative-ux-designer",
+  "accesslint/claude-marketplace/contrast-checker",
+  "accesslint/claude-marketplace/link-purpose",
+  "accesslint/claude-marketplace/refactor",
+  "accesslint/claude-marketplace/use-of-color",
+];
 
-const localSkills = skillList.filter((skill) => !skill.isRegistry);
-const registrySkills = skillList.filter((skill) => skill.isRegistry);
-const featuredRegistrySkills = registrySkills.slice(0, 8);
+const repoSkills = skills.filter((skill) => repoSkillSlugs.includes(skill.pathSlug));
+const curatedSkills = skills.filter((skill) => curatedSkillSlugs.includes(skill.pathSlug));
 ---
 
 <Layout>
@@ -47,7 +58,7 @@ const featuredRegistrySkills = registrySkills.slice(0, 8);
             Add a specific skill
           </h2>
           <ExpandableCodeBlock
-            lines={skillList.map((skill) => [
+            lines={[...repoSkills, ...curatedSkills].map((skill) => [
               { text: "npx", className: "text-[#953800]" },
               { text: " ui-skills", className: "text-[#0a3069]" },
               { text: " add", className: "text-[#0550ae]" },
@@ -94,7 +105,7 @@ const featuredRegistrySkills = registrySkills.slice(0, 8);
           </p>
           <div class="grid gap-4 px-4 sm:grid-cols-2 sm:px-0">
             {
-              localSkills.map((skill) => (
+              repoSkills.map((skill) => (
                 <a
                   href={`/skills/${skill.pathSlug}`}
                   class="hover:border-parchment-300 hover:bg-parchment-100 relative flex flex-col justify-between rounded-[12px] border border-neutral-200 bg-transparent px-6 py-4 transition-colors"
@@ -126,7 +137,7 @@ const featuredRegistrySkills = registrySkills.slice(0, 8);
           </p>
           <div class="grid gap-4 px-4 sm:grid-cols-2 sm:px-0">
             {
-              featuredRegistrySkills.map((skill) => (
+              curatedSkills.map((skill) => (
                 <a
                   href={`/skills/${skill.pathSlug}`}
                   class="hover:border-parchment-300 hover:bg-parchment-100 relative flex flex-col justify-between rounded-[12px] border border-neutral-200 bg-transparent px-6 py-4 transition-colors"
@@ -145,12 +156,12 @@ const featuredRegistrySkills = registrySkills.slice(0, 8);
               ))
             }
           </div>
-          <div class="mt-4 px-4 sm:px-0">
+          <div class="mt-4 flex justify-center px-4 sm:px-0">
             <a
-              href="/skills/curated"
-              class="text-parchment-600 hover:text-parchment-900 text-sm font-semibold"
+              href="/skills"
+              class="hover:border-parchment-300 hover:bg-parchment-100 text-parchment-900 inline-flex items-center justify-center rounded-[6px] border border-neutral-200 bg-transparent px-3 py-1.5 text-[14px] font-[450] tracking-tight transition-colors"
             >
-              See more curated skills ({registrySkills.length})
+              See all skills
             </a>
           </div>
         </div>

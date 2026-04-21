@@ -150,6 +150,76 @@ const registrySource: RegistrySourceSkill[] = [
       "Design engineering principles for making interfaces feel polished, with focus on micro-interactions, typography, and visual details.",
   },
   {
+    slug: "rams",
+    user: "rams",
+    repo: "rams-ai",
+    rawUrl: "https://www.rams.ai/rams.md",
+    githubUrl: "",
+    name: "rams",
+    description:
+      "Real-time design feedback skill focused on accessibility, spacing, typography, contrast, and component quality.",
+  },
+  {
+    slug: "bencium-innovative-ux-designer",
+    user: "bencium",
+    repo: "bencium-marketplace",
+    rawUrl:
+      "https://raw.githubusercontent.com/bencium/bencium-marketplace/main/bencium-innovative-ux-designer/skills/bencium-innovative-ux-designer/SKILL.md",
+    githubUrl:
+      "https://github.com/bencium/bencium-marketplace/blob/main/bencium-innovative-ux-designer/skills/bencium-innovative-ux-designer/SKILL.md",
+    name: "bencium-innovative-ux-designer",
+    description:
+      "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.",
+  },
+  {
+    slug: "contrast-checker",
+    user: "AccessLint",
+    repo: "claude-marketplace",
+    rawUrl:
+      "https://raw.githubusercontent.com/AccessLint/claude-marketplace/main/plugins/accesslint/skills/contrast-checker/SKILL.md",
+    githubUrl:
+      "https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/contrast-checker/SKILL.md",
+    name: "contrast-checker",
+    description:
+      "Color contrast analyzer for WCAG compliance. Calculates contrast ratios, identifies violations, and suggests accessible color alternatives.",
+  },
+  {
+    slug: "link-purpose",
+    user: "AccessLint",
+    repo: "claude-marketplace",
+    rawUrl:
+      "https://raw.githubusercontent.com/AccessLint/claude-marketplace/main/plugins/accesslint/skills/link-purpose/SKILL.md",
+    githubUrl:
+      "https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/link-purpose/SKILL.md",
+    name: "link-purpose",
+    description:
+      "Analyze and improve WCAG 2.4.4 link purpose compliance by fixing generic and ambiguous link text.",
+  },
+  {
+    slug: "refactor",
+    user: "AccessLint",
+    repo: "claude-marketplace",
+    rawUrl:
+      "https://raw.githubusercontent.com/AccessLint/claude-marketplace/main/plugins/accesslint/skills/refactor/SKILL.md",
+    githubUrl:
+      "https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/refactor/SKILL.md",
+    name: "refactor",
+    description:
+      "Accessibility refactoring specialist for systematic WCAG fixes across components and codebases.",
+  },
+  {
+    slug: "use-of-color",
+    user: "AccessLint",
+    repo: "claude-marketplace",
+    rawUrl:
+      "https://raw.githubusercontent.com/AccessLint/claude-marketplace/main/plugins/accesslint/skills/use-of-color/SKILL.md",
+    githubUrl:
+      "https://github.com/AccessLint/claude-marketplace/blob/main/plugins/accesslint/skills/use-of-color/SKILL.md",
+    name: "use-of-color",
+    description:
+      "Analyze and remediate WCAG 1.4.1 use-of-color issues where meaning relies only on color.",
+  },
+  {
     slug: "emil-design-eng",
     user: "emilkowalski",
     repo: "skill",
