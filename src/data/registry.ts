@@ -150,6 +150,30 @@ const registrySource: RegistrySourceSkill[] = [
       "Design engineering principles for making interfaces feel polished, with focus on micro-interactions, typography, and visual details.",
   },
   {
+    slug: "budge",
+    user: "millionco",
+    repo: "skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/millionco/skills/main/skills/budge/SKILL.md",
+    githubUrl:
+      "https://github.com/millionco/skills/blob/main/skills/budge/SKILL.md",
+    name: "budge",
+    description:
+      "Use when making single-property CSS or Tailwind visual changes in Next.js App Router projects. Presents a floating control widget for live tuning before persisting.",
+  },
+  {
+    slug: "react-doctor",
+    user: "millionco",
+    repo: "react-doctor",
+    rawUrl:
+      "https://raw.githubusercontent.com/millionco/react-doctor/main/skills/react-doctor/SKILL.md",
+    githubUrl:
+      "https://github.com/millionco/react-doctor/blob/main/skills/react-doctor/SKILL.md",
+    name: "react-doctor",
+    description:
+      "Run React Doctor to detect regressions in security, performance, correctness, and architecture, with score-based quality checks.",
+  },
+  {
     slug: "rams",
     user: "rams",
     repo: "rams-ai",

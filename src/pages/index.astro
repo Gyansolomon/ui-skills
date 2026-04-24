@@ -36,9 +36,30 @@ const displayedSkills = [...skills]
     <div class="relative mt-20 w-full max-w-3xl sm:px-0">
       <div class="mx-auto flex w-full flex-col gap-14">
         <div class="px-4 sm:px-0">
-          <h1 class="text-parchment-900 text-3xl font-medium tracking-tight">
-            UI Skills
-          </h1>
+          <h1 class="sr-only">UI Skills</h1>
+          <div class="relative">
+            <pre
+              aria-hidden="true"
+              class="text-parchment-500 font-['Fira_Mono'] text-[12px] leading-[110%] tracking-[-1.5px] whitespace-pre select-none lg:text-[12px]"
+              style="font-weight: 300">{`
+██╗   ██╗██╗    ███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
+██║   ██║██║    ██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
+██║   ██║██║    ███████╗█████╔╝ ██║██║     ██║     ███████╗
+██║   ██║██║    ╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
+╚██████╔╝██║    ███████║██║  ██╗██║███████╗███████╗███████║
+ ╚═════╝ ╚═╝    ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
+              `}</pre>
+            <pre
+              aria-hidden="true"
+              class="text-parchment-900 absolute top-0 left-0 font-['Fira_Mono'] text-[12px] leading-[110%] tracking-[-1.5px] whitespace-pre select-none lg:text-[12px]"
+              style="font-weight: 300">{`
+██    ██ ██     ███████ ██   ██ ██ ██      ██      ███████ 
+██    ██ ██     ██      ██  ██  ██ ██      ██      ██      
+██    ██ ██     ███████ █████   ██ ██      ██      ███████ 
+██    ██ ██          ██ ██  ██  ██ ██      ██           ██ 
+ ██████  ██     ███████ ██   ██ ██ ███████ ███████ ███████ 
+`}</pre>
+          </div>
           <p class="text-parchment-600 mt-3 text-lg">
             Skills for Design Engineers
           </p>
@@ -64,9 +85,7 @@ const displayedSkills = [...skills]
             }
           </div>
           <div class="mt-4 flex justify-center px-4 sm:px-0">
-            <Button href="/skills">
-              See all skills
-            </Button>
+            <Button href="/skills"> See all skills </Button>
           </div>
         </div>
       </div>
