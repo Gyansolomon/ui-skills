@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Button from "../ui/button.astro";
+import { getGithubStars } from "../lib/github-stars";
 
 type Props = {
   llmsPath?: string;
@@ -9,23 +10,7 @@ type Props = {
 const { llmsPath } = Astro.props as Props;
 const currentYear = new Date().getFullYear();
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://ui-skills.com");
-
-let githubStars = "7,000+";
-
-try {
-  const response = await fetch("https://api.github.com/repos/ibelick/ui-skills", {
-    headers: { Accept: "application/vnd.github+json" },
-  });
-
-  if (response.ok) {
-    const data = await response.json();
-    if (typeof data?.stargazers_count === "number") {
-      githubStars = new Intl.NumberFormat("en-US").format(data.stargazers_count);
-    }
-  }
-} catch {
-  // Keep fallback count when GitHub API is unavailable.
-}
+const githubStars = await getGithubStars("ibelick/ui-skills", "7,000+");
 ---
 
 <!doctype html>

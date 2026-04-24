@@ -4,7 +4,7 @@ import CodeBlock from "../../ui/code-block.astro";
 import type { MarkdownInstance } from "astro";
 import { skills, type Skill } from "../../data/skills";
 import { registry, type RegistrySkill } from "../../data/registry";
-import SkillCard from "../../ui/skill-card.astro";
+import SkillContentCard from "../../ui/skill-content-card.astro";
 import Breadcrumbs from "../../ui/breadcrumbs.astro";
 import { marked } from "marked";
 
@@ -223,14 +223,14 @@ const commandSegments = [
                 <CodeBlock lines={[commandSegments]} align="center" />
               </div>
 
-              <SkillCard
+              <SkillContentCard
                 copyContent={skillRaw}
                 name={skill.name}
                 description={skill.description}
                 dataEvent="install"
               >
                 {SkillContent ? <SkillContent /> : <div set:html={displayContent} />}
-              </SkillCard>
+              </SkillContentCard>
 
               {relatedSkills.length > 0 ? (
                 <div>

@@ -2,29 +2,21 @@
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../ui/breadcrumbs.astro";
 import { skills } from "../../data/skills";
+import SkillCard from "../../ui/skill-card.astro";
 
 const breadcrumbItems = [{ label: "Home", href: "/" }, { label: "Skills" }];
 
-const groupedSkills = Array.from(
-  skills.reduce((map, skill) => {
-    const key = skill.sourceKey ?? skill.pathSlug.split("/")[0] ?? "other";
-    const label = skill.sourceLabel ?? key;
-    const ownerPath = key;
-    const current = map.get(key);
+const mixedSkills = [...skills]
+  .sort((a, b) => a.pathSlug.localeCompare(b.pathSlug))
+  .map((skill) => {
+    const owner = skill.sourceKey ?? "ibelick";
 
-    if (current) {
-      current.skills.push(skill);
-      return map;
-    }
-
-    map.set(key, { label, ownerPath, skills: [skill] });
-    return map;
-  }, new Map<string, { label: string; ownerPath: string; skills: typeof skills }>()),
-).sort((a, b) => {
-  if (a[0] === "ibelick") return -1;
-  if (b[0] === "ibelick") return 1;
-  return a[1].label.localeCompare(b[1].label);
-});
+    return {
+      ...skill,
+      ownerLabel: skill.sourceLabel ?? "Ibelick",
+      avatarUrl: `https://github.com/${owner}.png?size=40`,
+    };
+  });
 ---
 
 <Layout>
@@ -44,58 +36,17 @@ const groupedSkills = Array.from(
           </p>
         </div>
 
-        <div class="flex flex-col gap-10 px-4 sm:px-0">
+        <div class="grid gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3 sm:px-0">
           {
-            groupedSkills.map(([sourceKey, group]) => {
-              const sortedSkills = [...group.skills].sort((a, b) =>
-                a.pathSlug.localeCompare(b.pathSlug),
-              );
-              const visibleSkills = sortedSkills.slice(0, 3);
-              const hiddenSkills = sortedSkills.slice(3);
-
-              return (
-                <div id={sourceKey} class="flex flex-col gap-3">
-                  <h2 class="text-parchment-900 text-lg font-medium tracking-tight">
-                    <a
-                      href={`/skills/${group.ownerPath}`}
-                      class="hover:text-parchment-700 transition-colors"
-                    >
-                      {group.label}
-                    </a>
-                  </h2>
-
-                  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {visibleSkills.map((skill) => (
-                      <a
-                        href={`/skills/${skill.pathSlug}`}
-                        class="hover:border-parchment-300 hover:bg-parchment-100 relative flex flex-col justify-between rounded-[12px] border border-neutral-200 bg-transparent px-6 py-4 transition-colors"
-                      >
-                        <div class="flex flex-col gap-1">
-                          <div class="text-parchment-900 font-[450] tracking-tight">
-                            {skill.slug}
-                          </div>
-                          {skill.description ? (
-                            <div class="text-parchment-500 line-clamp-3 text-[14px] leading-snug">
-                              {skill.description}
-                            </div>
-                          ) : null}
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-
-                  {hiddenSkills.length > 0 ? (
-                    <a
-                      href={`/skills/${group.ownerPath}`}
-                      aria-label={`Show ${hiddenSkills.length} more skills from ${group.label}`}
-                      class="hover:border-parchment-300 hover:bg-parchment-100 text-parchment-900 inline-flex w-fit items-center gap-2 rounded-[8px] border border-neutral-200 bg-transparent px-3.5 py-2 text-[14px] font-[500] tracking-tight transition-colors"
-                    >
-                      Show +{hiddenSkills.length}
-                    </a>
-                  ) : null}
-                </div>
-              );
-            })
+            mixedSkills.map((skill) => (
+              <SkillCard
+                href={`/skills/${skill.pathSlug}`}
+                slug={skill.slug}
+                description={skill.description}
+                ownerLabel={skill.ownerLabel}
+                avatarUrl={skill.avatarUrl}
+              />
+            ))
           }
         </div>
       </div>

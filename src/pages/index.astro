@@ -2,28 +2,31 @@
 import Layout from "../layouts/Layout.astro";
 import { skills } from "../data/skills";
 import Button from "../ui/button.astro";
+import SkillCard from "../ui/skill-card.astro";
 
-const repoSkillSlugs = [
-  "ibelick/baseline-ui",
-  "ibelick/fixing-accessibility",
-  "ibelick/fixing-metadata",
-  "ibelick/fixing-motion-performance",
-];
-const curatedSkillSlugs = [
-  "rams/rams",
-  "bencium/bencium-innovative-ux-designer",
-  "accesslint/contrast-checker",
-  "accesslint/link-purpose",
-  "accesslint/refactor",
-  "accesslint/use-of-color",
-];
+const MAX_SKILLS = 12;
 
-const repoSkills = skills.filter((skill) =>
-  repoSkillSlugs.includes(skill.pathSlug),
-);
-const curatedSkills = skills.filter((skill) =>
-  curatedSkillSlugs.includes(skill.pathSlug),
-);
+const displayedSkills = [...skills]
+  .sort((a, b) => {
+    const aIsMine = (a.sourceKey ?? "") === "ibelick";
+    const bIsMine = (b.sourceKey ?? "") === "ibelick";
+
+    if (aIsMine && !bIsMine) return -1;
+    if (!aIsMine && bIsMine) return 1;
+
+    return a.pathSlug.localeCompare(b.pathSlug);
+  })
+  .slice(0, MAX_SKILLS)
+  .map((skill) => {
+    const owner = skill.sourceKey ?? "ibelick";
+
+    return {
+      ...skill,
+      owner,
+      ownerLabel: skill.sourceLabel ?? "Ibelick",
+      avatarUrl: `https://github.com/${owner}.png?size=40`,
+    };
+  });
 ---
 
 <Layout>
@@ -43,63 +46,20 @@ const curatedSkills = skills.filter((skill) =>
 
         <div>
           <h2
-            class="text-parchment-900 px-4 text-lg font-medium tracking-tight sm:px-0"
+            class="text-parchment-900 mb-4 px-4 text-lg font-medium tracking-tight sm:px-0"
           >
-            Original
+            Skills
           </h2>
-          <p class="text-parchment-500 mb-4 px-4 text-[15px] sm:px-0">
-            Foundation skills for design engineering.
-          </p>
           <div class="grid gap-4 px-4 sm:grid-cols-2 sm:px-0">
             {
-              repoSkills.map((skill) => (
-                <a
+              displayedSkills.map((skill) => (
+                <SkillCard
                   href={`/skills/${skill.pathSlug}`}
-                  class="hover:border-parchment-300 hover:bg-parchment-100 relative flex flex-col justify-between rounded-[12px] border border-neutral-200 bg-transparent px-6 py-4 transition-colors"
-                >
-                  <div class="flex flex-col gap-1">
-                    <div class="text-parchment-900 font-[450] tracking-tight">
-                      {skill.slug}
-                    </div>
-                    {skill.description ? (
-                      <div class="text-parchment-500 line-clamp-3 text-[14px] leading-snug">
-                        {skill.description}
-                      </div>
-                    ) : null}
-                  </div>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-
-        <div>
-          <h2
-            class="text-parchment-900 mb-0 px-4 text-lg font-medium tracking-tight sm:px-0"
-          >
-            Curated
-          </h2>
-          <p class="text-parchment-500 mb-4 px-4 text-[15px] sm:px-0">
-            A hand-picked starter set of external UI skills.
-          </p>
-          <div class="grid gap-4 px-4 sm:grid-cols-2 sm:px-0">
-            {
-              curatedSkills.map((skill) => (
-                <a
-                  href={`/skills/${skill.pathSlug}`}
-                  class="hover:border-parchment-300 hover:bg-parchment-100 relative flex flex-col justify-between rounded-[12px] border border-neutral-200 bg-transparent px-6 py-4 transition-colors"
-                >
-                  <div class="flex flex-col gap-1">
-                    <div class="text-parchment-900 font-[450] tracking-tight">
-                      {skill.slug}
-                    </div>
-                    {skill.description ? (
-                      <div class="text-parchment-500 line-clamp-3 text-[14px] leading-snug">
-                        {skill.description}
-                      </div>
-                    ) : null}
-                  </div>
-                </a>
+                  slug={skill.slug}
+                  description={skill.description}
+                  ownerLabel={skill.ownerLabel}
+                  avatarUrl={skill.avatarUrl}
+                />
               ))
             }
           </div>
