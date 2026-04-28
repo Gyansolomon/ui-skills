@@ -150,6 +150,18 @@ const registrySource: RegistrySourceSkill[] = [
       "Design engineering principles for making interfaces feel polished, with focus on micro-interactions, typography, and visual details.",
   },
   {
+    slug: "oklch-skill",
+    user: "jakubkrehel",
+    repo: "oklch-skill",
+    rawUrl:
+      "https://raw.githubusercontent.com/jakubkrehel/oklch-skill/main/skills/oklch-skill/SKILL.md",
+    githubUrl:
+      "https://github.com/jakubkrehel/oklch-skill/blob/main/skills/oklch-skill/SKILL.md",
+    name: "oklch-skill",
+    description:
+      "Practical OKLCH color workflow skill for building consistent, accessible, and tunable color systems in modern UIs.",
+  },
+  {
     slug: "budge",
     user: "millionco",
     repo: "skills",
@@ -662,6 +674,18 @@ const registrySource: RegistrySourceSkill[] = [
     name: "typeset",
     description:
       "Improve typography systems, hierarchy, readability, and text cadence for more intentional interfaces.",
+  },
+  {
+    slug: "transitions-dev",
+    user: "Jakubantalik",
+    repo: "transitions-dev",
+    rawUrl:
+      "https://raw.githubusercontent.com/Jakubantalik/transitions-dev/main/skills/transitions-dev/SKILL.md",
+    githubUrl:
+      "https://github.com/Jakubantalik/transitions-dev/blob/main/skills/transitions-dev/SKILL.md",
+    name: "transitions-dev",
+    description:
+      "Production-ready CSS transition patterns for web apps, with drop-in snippets for cards, modals, dropdowns, panels, and page transitions.",
   },
 ];
 
