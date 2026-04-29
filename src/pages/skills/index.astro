@@ -25,12 +25,14 @@ const primaryTopicBadges = primaryDesignTopicSlugs
     const topic = topicBySlug.get(slug);
     if (!topic) return null;
 
-    const count = mixedSkills.filter((skill) => skill.topics?.includes(slug)).length;
+    const count = mixedSkills.filter((skill) =>
+      skill.topics?.includes(slug),
+    ).length;
     return {
       slug,
       label: topic.label,
       count,
-      href: `/topics/${slug}`,
+      href: `/skills/${slug}`,
     };
   })
   .filter((topic): topic is NonNullable<typeof topic> => topic !== null)
@@ -69,25 +71,31 @@ const structuredData = {
         <Breadcrumbs items={breadcrumbItems} />
 
         <div>
-          <h1 class="text-parchment-900 px-4 text-3xl font-medium tracking-tight sm:px-0">
+          <h1
+            class="text-parchment-900 px-4 text-3xl font-medium tracking-tight sm:px-0"
+          >
             Discover today's top UI skills
           </h1>
           <p class="text-parchment-500 mt-3 px-4 text-[15px] sm:px-0">
-            A thoughtful directory of {mixedSkills.length.toLocaleString()} high-quality skills for design engineers and frontend teams, including accessibility, motion, frameworks, testing, and performance guidance.
+            A thoughtful directory of {mixedSkills.length.toLocaleString()} high-quality
+            skills for design engineers and frontend teams, including accessibility,
+            motion, frameworks, testing, and performance guidance.
           </p>
           <div class="scroll-fade mt-5 px-4 sm:px-0" id="topic-scroll-row">
-            <div class="flex w-max min-w-full flex-nowrap items-center gap-2 whitespace-nowrap pb-1">
+            <div
+              class="flex w-max min-w-full flex-nowrap items-center gap-2 pb-1 whitespace-nowrap"
+            >
               {
                 primaryTopicBadges.map((topic) => (
                   <TopicTag href={topic.href} label={topic.label} />
                 ))
               }
-              <TopicTag href="/topics" label="More" />
+              <TopicTag href="/skills/topics" label="More" />
             </div>
           </div>
         </div>
 
-        <div class="grid gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3 sm:px-0">
+        <div class="grid gap-4 px-4 sm:grid-cols-2 sm:px-0 lg:grid-cols-3">
           {
             mixedSkills.map((skill) => (
               <SkillCard
@@ -135,8 +143,20 @@ const structuredData = {
   }
 
   .scroll-fade[data-mask="both"] {
-    -webkit-mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 24px,
+      black calc(100% - 24px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 24px,
+      black calc(100% - 24px),
+      transparent 100%
+    );
     -webkit-mask-size: calc(100% + 24px) 100%;
     mask-size: calc(100% + 24px) 100%;
     -webkit-mask-position: -12px 0;
