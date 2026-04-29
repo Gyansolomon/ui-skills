@@ -3,12 +3,13 @@ import Layout from "../../layouts/Layout.astro";
 import CodeBlock from "../../ui/code-block.astro";
 import type { MarkdownInstance } from "astro";
 import { skills, type Skill } from "../../data/skills";
-import { topicBySlug } from "../../data/topics";
+import { topicBySlug, relatedTopicSlugs } from "../../data/topics";
 import type { TopicSlug } from "../../data/registry";
 import { registry, type RegistrySkill } from "../../data/registry";
 import SkillContentCard from "../../ui/skill-content-card.astro";
 import Breadcrumbs from "../../ui/breadcrumbs.astro";
 import SkillCard from "../../ui/skill-card.astro";
+import TopicTag from "../../ui/topic-tag.astro";
 import { marked } from "marked";
 
 type SkillFrontmatter = {
@@ -193,6 +194,40 @@ const relatedSkills = skill
           entry.sourceKey === skill.sourceKey,
       )
       .slice(0, 10)
+  : [];
+
+const topicUsageCountBySlug = new Map<TopicSlug, number>();
+for (const entry of skillList) {
+  for (const topicSlug of entry.topics ?? []) {
+    topicUsageCountBySlug.set(
+      topicSlug,
+      (topicUsageCountBySlug.get(topicSlug) ?? 0) + 1,
+    );
+  }
+}
+
+const relatedTopicsForTopicPage =
+  isTopicGroup && topic
+    ? (relatedTopicSlugs[topic.slug] ?? [])
+        .filter((slug) => (topicUsageCountBySlug.get(slug) ?? 0) > 0)
+        .map((slug) => topicBySlug.get(slug))
+        .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry))
+        .slice(0, 5)
+    : [];
+
+const skillTopicSuggestions = skill
+  ? Array.from(
+      new Set([
+        ...(skill.topics ?? []),
+        ...(skill.topics ?? []).flatMap(
+          (slug) => relatedTopicSlugs[slug] ?? [],
+        ),
+      ]),
+    )
+      .filter((slug) => (topicUsageCountBySlug.get(slug as TopicSlug) ?? 0) > 0)
+      .map((slug) => topicBySlug.get(slug as TopicSlug))
+      .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry))
+      .slice(0, 8)
   : [];
 
 const siteOrigin = Astro.site ?? new URL("https://www.ui-skills.com");
@@ -463,6 +498,19 @@ const commandSegments = [
                   />
                 ))}
               </div>
+
+              {relatedTopicsForTopicPage.length > 0 ? (
+                <div class="px-4 sm:px-0">
+                  <h2 class="text-parchment-900 mb-3 text-lg font-medium tracking-tight">
+                    Related topics
+                  </h2>
+                  <div class="flex flex-wrap gap-2">
+                    {relatedTopicsForTopicPage.map((entry) => (
+                      <TopicTag href={`/skills/${entry.slug}`} label={entry.label} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </>
           ) : null
         }
@@ -560,6 +608,19 @@ const commandSegments = [
                           </div>
                         ) : null}
                       </a>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {skillTopicSuggestions.length > 0 ? (
+                <div class="px-4 sm:px-0">
+                  <h2 class="text-parchment-900 mb-3 text-lg font-medium tracking-tight">
+                    Explore topics
+                  </h2>
+                  <div class="flex flex-wrap gap-2">
+                    {skillTopicSuggestions.map((entry) => (
+                      <TopicTag href={`/skills/${entry.slug}`} label={entry.label} />
                     ))}
                   </div>
                 </div>
