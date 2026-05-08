@@ -7,6 +7,10 @@ export const GET: APIRoute = ({ site }) => {
   const body = [
     "User-agent: *",
     "Allow: /",
+    "Disallow: /llms.txt",
+    "Disallow: /skills/*/llms.txt",
+    "Disallow: /skills/registry.txt",
+    "Disallow: /install",
     "",
     `Sitemap: ${origin}/sitemap.xml`,
     "",

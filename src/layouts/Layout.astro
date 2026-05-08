@@ -38,8 +38,14 @@ const {
   siteName,
 } = Astro.props as Props;
 const currentYear = new Date().getFullYear();
+const canonicalPath =
+  Astro.url.pathname === "/"
+    ? "/"
+    : Astro.url.pathname.endsWith("/")
+      ? Astro.url.pathname
+      : `${Astro.url.pathname}/`;
 const canonicalUrl = new URL(
-  Astro.url.pathname,
+  canonicalPath,
   Astro.site ?? "https://www.ui-skills.com",
 );
 const pageTitle = title ?? "UI Skills - Skills for Design Engineers";
@@ -86,7 +92,9 @@ const commandItems = skills.map((skill) => ({
   label: skill.label,
   sourceLabel: skill.sourceLabel,
   description: skill.description,
-  searchContent: skill.isRegistry ? (skill.description ?? "") : buildSearchContent(skill),
+  searchContent: skill.isRegistry
+    ? (skill.description ?? "")
+    : buildSearchContent(skill),
 }));
 ---
 

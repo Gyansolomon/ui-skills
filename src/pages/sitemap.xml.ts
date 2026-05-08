@@ -45,7 +45,9 @@ export const GET: APIRoute = ({ site }) => {
 
   const urlset = allRoutes
     .map((route) => {
-      const loc = new URL(route, origin).toString();
+      const normalizedRoute =
+        route === "/" ? "/" : route.endsWith("/") ? route : `${route}/`;
+      const loc = new URL(normalizedRoute, origin).toString();
       return `<url><loc>${escapeXml(loc)}</loc></url>`;
     })
     .join("");
