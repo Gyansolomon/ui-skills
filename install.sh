@@ -134,7 +134,16 @@ get_registry_url() {
     return
   fi
 
-  awk -F '\t' -v slug="$skill_slug" '$1 == slug {print $2; exit}' "$TMP_REGISTRY"
+  awk -F '\t' -v slug="$skill_slug" '
+    $1 == slug {
+      print $2
+      exit
+    }
+    $1 ~ ("/" slug "$") {
+      print $2
+      exit
+    }
+  ' "$TMP_REGISTRY"
 }
 
 download_skill() {
