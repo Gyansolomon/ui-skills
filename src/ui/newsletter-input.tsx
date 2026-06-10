@@ -42,8 +42,8 @@ function LoaderIcon({ className = "", size = 14 }: { className?: string; size?: 
 }
 
 export default function NewsletterInput({
-  title = "Join the newsletter",
-  description = "Get new UI skills, tools, and design engineering updates in your inbox.",
+  title = "Get updates",
+  description = "Fresh UI skills and design engineering notes.",
   placeholder = "Enter your email",
   buttonLabel = "Subscribe",
 }: Props) {
