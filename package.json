@@ -1,10 +1,10 @@
 {
   "name": "ui-skills",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "bin": {
-    "ui-skills": "bin/ui-skills"
+    "ui-skills": "bin/ui-skills.js"
   },
   "scripts": {
     "dev": "astro dev",
@@ -27,12 +27,14 @@
     "motion": "^12.24.12",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "tsx": "^4.20.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@tailwindcss/typography": "^0.5.19",
     "@types/marked": "^5.0.2",
+    "@types/node": "^25.9.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.8",

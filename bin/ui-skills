@@ -14,4 +14,4 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
 
-exec node --experimental-strip-types "$SCRIPT_DIR/ui-skills.ts" "$@"
+exec node "$SCRIPT_DIR/ui-skills.js" "$@"
