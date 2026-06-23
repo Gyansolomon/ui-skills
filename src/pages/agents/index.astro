@@ -1,0 +1,79 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../ui/breadcrumbs.astro";
+import { agents } from "../../data/agents";
+
+const breadcrumbItems = [{ label: "Home", href: "/" }, { label: "Agents" }];
+
+const siteOrigin = Astro.site ?? new URL("https://www.ui-skills.com");
+const agentsIndexUrl = new URL("/agents", siteOrigin).toString();
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "AI Agents",
+  description: "Agents that support UI Skills.",
+  url: agentsIndexUrl,
+  hasPart: {
+    "@type": "ItemList",
+    itemListElement: agents.map((agent, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: new URL(`/agents/${agent.id}`, siteOrigin).toString(),
+      name: agent.name,
+    })),
+  },
+};
+---
+
+<Layout
+  structuredData={structuredData}
+  title="Agents | UI Skills"
+  description="AI agents that support UI Skills and the skills CLI."
+>
+  <div class="relative flex min-h-dvh flex-col items-center justify-start px-0 sm:px-4">
+    <div class="relative mt-20 w-full max-w-3xl sm:px-0">
+      <div class="mx-auto flex w-full flex-col gap-10">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="px-4 sm:px-0">
+          <h1 class="text-parchment-900 text-3xl font-medium tracking-tight">
+            Agents
+          </h1>
+          <p class="text-parchment-500 mt-3 max-w-2xl text-base leading-snug">
+            AI coding agents that support the skills CLI and UI Skills.
+          </p>
+        </div>
+
+        <div class="grid gap-4 px-4 sm:px-0 sm:grid-cols-2">
+          {
+            agents.map((agent) => (
+              <a
+                href={`/agents/${agent.id}`}
+                class="hover:border-parchment-300 hover:bg-parchment-100 flex h-full flex-col gap-4 rounded-[12px] border border-neutral-200 bg-transparent px-6 py-5 transition-colors"
+              >
+                <div class="flex items-center gap-3">
+                  <img
+                    src={agent.faviconUrl}
+                    alt={`${agent.name} logo`}
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    class="size-8 rounded-full border border-neutral-200"
+                  />
+                  <div>
+                    <h2 class="text-parchment-900 text-lg font-medium tracking-tight">
+                      {agent.name}
+                    </h2>
+                  </div>
+                </div>
+                <p class="text-parchment-500 line-clamp-3 text-base leading-snug">
+                  {agent.description}
+                </p>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

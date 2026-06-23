@@ -1,9 +1,20 @@
 ---
 import { topics } from "../data/topics";
+import { agents } from "../data/agents";
 
 const currentYear = new Date().getFullYear();
 const coreTopics = topics.filter((topic) => topic.isDesignCore);
 const featuredTopics = coreTopics.slice(0, 6);
+const featuredAgentIds = [
+  "claude-code",
+  "cursor",
+  "openclaw",
+  "codex",
+  "github-copilot",
+];
+const featuredAgents = featuredAgentIds
+  .map((id) => agents.find((agent) => agent.id === id))
+  .filter((agent): agent is NonNullable<typeof agent> => Boolean(agent));
 type FooterLink = {
   label: string;
   href: string;
@@ -21,7 +32,7 @@ const footerSections: FooterSection[] = [
     links: [
       { label: "Home", href: "/" },
       { label: "Skills", href: "/skills" },
-      { label: "Agents", href: "/agent" },
+      { label: "Agents", href: "/agents" },
       { label: "Registry", href: "/skills/registry.txt" },
       { label: "llms.txt", href: "/llms.txt" },
     ],
@@ -34,6 +45,16 @@ const footerSections: FooterSection[] = [
         href: `/skills/${topic.slug}`,
       })),
       { label: "More topics", href: "/skills/topics" },
+    ],
+  },
+  {
+    title: "Agents",
+    links: [
+      ...featuredAgents.map((agent) => ({
+        label: agent.name,
+        href: `/agents/${agent.id}`,
+      })),
+      { label: "More agents", href: "/agents" },
     ],
   },
   {
@@ -85,7 +106,7 @@ const footerSections: FooterSection[] = [
 <footer class="border-parchment-200 mt-32 border-t">
   <div class="px-4 py-12 sm:px-8 sm:py-16">
     <div class="mx-auto w-full max-w-3xl">
-      <div class="grid gap-20 text-base md:grid-cols-4">
+      <div class="grid gap-12 text-base md:grid-cols-2 lg:grid-cols-5">
         {
           footerSections.map((section) => (
             <div>
@@ -99,7 +120,9 @@ const footerSections: FooterSection[] = [
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
-                      class="text-parchment-400 hover:text-parchment-900"
+                      title={link.label}
+                      aria-label={link.label}
+                      class="text-parchment-400 hover:text-parchment-900 block max-w-full truncate"
                     >
                       {link.label}
                     </a>
