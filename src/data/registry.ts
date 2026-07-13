@@ -891,6 +891,45 @@ const registrySource: RegistrySourceSkill[] = [
       "Practical OKLCH color workflow skill for building consistent, accessible, and tunable color systems in modern UIs.",
   },
   {
+    slug: "better-ui",
+    user: "jakubkrehel",
+    repo: "skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/jakubkrehel/skills/main/skills/better-ui/SKILL.md",
+    githubUrl:
+      "https://github.com/jakubkrehel/skills/blob/main/skills/better-ui/SKILL.md",
+    name: "better-ui",
+    topics: ["visual", "interaction", "motion"],
+    description:
+      "Design engineering principles for making interfaces feel polished. Use when building UI components, reviewing frontend code, implementing animations, hover states, shadows, borders, micro-interactions, enter/exit animations, or any visual detail work. Triggers on UI polish, design details, \"make it feel better\", \"feels off\", stagger animations, border radius, optical alignment, image outlines, box shadows.",
+  },
+  {
+    slug: "better-colors",
+    user: "jakubkrehel",
+    repo: "skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/jakubkrehel/skills/main/skills/better-colors/SKILL.md",
+    githubUrl:
+      "https://github.com/jakubkrehel/skills/blob/main/skills/better-colors/SKILL.md",
+    name: "better-colors",
+    topics: ["color", "accessibility", "systems"],
+    description:
+      "OKLCH color space for web projects. Convert hex/rgb/hsl to oklch, generate palettes, check contrast, handle gamut boundaries, and theme with Tailwind v4. Triggers on oklch, color conversion, palette generation, contrast ratio, gamut, display p3, design tokens, hue drift, chroma, dark mode colors.",
+  },
+  {
+    slug: "better-typography",
+    user: "jakubkrehel",
+    repo: "skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/jakubkrehel/skills/main/skills/better-typography/SKILL.md",
+    githubUrl:
+      "https://github.com/jakubkrehel/skills/blob/main/skills/better-typography/SKILL.md",
+    name: "better-typography",
+    topics: ["typography", "visual", "accessibility"],
+    description:
+      "Web typography from choosing fonts to spacing, wrapping and accessibility. Use when picking or pairing typefaces, configuring variable fonts or OpenType features, setting up a type scale, styling text in components, truncating text, styling underlines, selection, placeholders or carets, or reviewing frontend code for typography. Triggers on typography, fonts, font formats, woff2, variable fonts, font-weight, opentype, font-feature-settings, letter-spacing, line-height, type scale, tabular numbers, text-wrap, truncation, line clamp, underlines, text-decoration, text selection, iOS input zoom, font smoothing, text contrast, measure, line length, text-box, smart punctuation, drop cap.",
+  },
+  {
     slug: "budge",
     user: "millionco",
     repo: "skills",
@@ -1017,6 +1056,45 @@ const registrySource: RegistrySourceSkill[] = [
     topics: ["craft", "taste", "visual"],
     description:
       "Emil Kowalski's design-engineering philosophy for UI polish, components, animation, and production-ready frontend craft.",
+  },
+  {
+    slug: "apple-design",
+    user: "emilkowalski",
+    repo: "skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/emilkowalski/skills/main/skills/apple-design/SKILL.md",
+    githubUrl:
+      "https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md",
+    name: "apple-design",
+    topics: ["motion", "interaction", "visual"],
+    description:
+      "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
+  },
+  {
+    slug: "improve-animations",
+    user: "emilkowalski",
+    repo: "skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/emilkowalski/skills/main/skills/improve-animations/SKILL.md",
+    githubUrl:
+      "https://github.com/emilkowalski/skills/blob/main/skills/improve-animations/SKILL.md",
+    name: "improve-animations",
+    topics: ["motion", "performance", "testing"],
+    description:
+      "Survey a codebase's animation and motion code as a senior motion advisor, then produce prioritized audit and self-contained implementation plans. Read-only on source code - it plans improvements, it does not apply them. Use when the user asks to improve animations, audit motion, make an app feel better, or wants a roadmap of animation fixes rather than a review of a single diff.",
+  },
+  {
+    slug: "web-clone",
+    user: "Jane-xiaoer",
+    repo: "claude-skill-web-clone",
+    rawUrl:
+      "https://raw.githubusercontent.com/Jane-xiaoer/claude-skill-web-clone/main/SKILL.md",
+    githubUrl:
+      "https://github.com/Jane-xiaoer/claude-skill-web-clone/blob/main/SKILL.md",
+    name: "web-clone",
+    topics: ["frontend", "architecture", "tooling"],
+    description:
+      "网站复刻 / 克隆方法论。Use when the user says to clone, reproduce, or recreate a website or WebGL/Canvas/Three.js effect. Covers source-first reconstruction, repo scaffolding, reverse engineering, implementation paths, and verification for static sites, content sites, and heavy front-end experiences.",
   },
   {
     slug: "generating-sounds-with-ai",

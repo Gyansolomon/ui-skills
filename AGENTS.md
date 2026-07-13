@@ -9,3 +9,10 @@
 - Use `JetBrains Mono` for code, commands, and monospace UI.
 - Keep labels and link text in sentence case.
 - Prefer light borders, minimal decoration, and generous spacing.
+
+## Skills
+
+- Add skills in `src/data/registry.ts` only.
+- Fill `slug`, `user`, `repo`, `rawUrl`, `githubUrl`, `name`, `description`, and `topics`.
+- If a new topic is needed, update `TopicSlug`, `topicsBySlug`, `relatedTopicSlugs`, and `primaryDesignTopicSlugs` only when it is a core topic.
+- Do not add local `skills/*` files unless the repo actually hosts the skill markdown.
