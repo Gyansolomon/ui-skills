@@ -76,6 +76,383 @@ const registrySource: RegistrySourceSkill[] = [
       "Quickly deslop UI code by fixing spacing, hierarchy, typography, and small layout issues. Use when the interface needs a fast cleanup or polish pass.",
   },
   {
+    slug: "design-first-ui-prompting",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/design-first-ui-prompting/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/design-first-ui-prompting/SKILL.md",
+    name: "design-first-ui-prompting",
+    topics: ["visual", "systems", "frontend"],
+    description:
+      "Use when you want to turn a product goal into a design-first UI prompt with clear layout, type, color, and constraint choices.",
+  },
+  {
+    slug: "design-taste-frontend",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/design-taste-frontend/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/design-taste-frontend/SKILL.md",
+    name: "design-taste-frontend",
+    topics: ["visual", "taste", "systems"],
+    description:
+      "Use when the UI needs stronger taste, restraint, hierarchy, and visual coherence without changing the product shape.",
+  },
+  {
+    slug: "full-output-enforcement",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/full-output-enforcement/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/full-output-enforcement/SKILL.md",
+    name: "full-output-enforcement",
+    topics: ["systems", "tooling", "frontend"],
+    description:
+      "Use when you need the agent to deliver the complete requested output instead of a partial or truncated result.",
+  },
+  {
+    slug: "gpt-taste",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/gpt-taste/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/gpt-taste/SKILL.md",
+    name: "gpt-taste",
+    topics: ["taste", "visual", "frontend"],
+    description:
+      "Use when you want stronger aesthetic judgment, visual refinement, and better-looking interface decisions from the model.",
+  },
+  {
+    slug: "high-end-visual-design",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/high-end-visual-design/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/high-end-visual-design/SKILL.md",
+    name: "high-end-visual-design",
+    topics: ["visual", "systems", "craft"],
+    description:
+      "Use when the interface needs a premium, high-polish visual treatment with disciplined spacing and hierarchy.",
+  },
+  {
+    slug: "image-to-code",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/image-to-code/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/image-to-code/SKILL.md",
+    name: "image-to-code",
+    topics: ["frontend", "visual", "tooling"],
+    description:
+      "Use when you have a visual reference and want a practical workflow to translate it into implementation details.",
+  },
+  {
+    slug: "industrial-brutalist-ui",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/industrial-brutalist-ui/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/industrial-brutalist-ui/SKILL.md",
+    name: "industrial-brutalist-ui",
+    topics: ["visual", "systems", "craft"],
+    description:
+      "Use when you want a harder-edged, brutalist UI direction with strong structure and visual tension.",
+  },
+  {
+    slug: "minimalist-ui",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/minimalist-ui/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/minimalist-ui/SKILL.md",
+    name: "minimalist-ui",
+    topics: ["visual", "systems", "craft"],
+    description:
+      "Use when you want a restrained UI direction with fewer elements, cleaner hierarchy, and more negative space.",
+  },
+  {
+    slug: "redesign-existing-projects",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/redesign-existing-projects/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/redesign-existing-projects/SKILL.md",
+    name: "redesign-existing-projects",
+    topics: ["visual", "frontend", "systems"],
+    description:
+      "Use when you need to improve an existing product interface without throwing away the underlying product structure.",
+  },
+  {
+    slug: "seo-audit",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/seo-audit/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/seo-audit/SKILL.md",
+    name: "seo-audit",
+    topics: ["frontend", "architecture", "tooling"],
+    description:
+      "Use when you need to review a page for metadata, headings, structured data, and search visibility basics.",
+  },
+  {
+    slug: "stitch-design-taste",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/stitch-design-taste/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/stitch-design-taste/SKILL.md",
+    name: "stitch-design-taste",
+    topics: ["visual", "taste", "systems"],
+    description:
+      "Use when you want to combine multiple references into one coherent visual direction without losing consistency.",
+  },
+  {
+    slug: "swiftui-pro",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/ui/swiftui-pro/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/ui/swiftui-pro/SKILL.md",
+    name: "swiftui-pro",
+    topics: ["swiftui", "frontend", "systems"],
+    description:
+      "Use when building or polishing SwiftUI interfaces with production-minded composition and layout discipline.",
+  },
+  {
+    slug: "landing-page",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/landing-page/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/landing-page/SKILL.md",
+    name: "landing-page",
+    topics: ["visual", "frontend", "interaction"],
+    description:
+      "Use when designing or implementing a landing page with strong hierarchy, conversion flow, and visual pacing.",
+  },
+  {
+    slug: "pricing-page",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/pricing-page/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/pricing-page/SKILL.md",
+    name: "pricing-page",
+    topics: ["visual", "frontend", "interaction"],
+    description:
+      "Use when building a pricing page with clear plan comparison, emphasis, and conversion-oriented layout.",
+  },
+  {
+    slug: "tailwindcss",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/tailwindcss/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/tailwindcss/SKILL.md",
+    name: "tailwindcss",
+    topics: ["frontend", "systems", "tooling"],
+    description:
+      "Use when you are implementing UI with Tailwind and want reusable, practical utility-first patterns.",
+  },
+  {
+    slug: "animation-systems",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/animation-systems/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/animation-systems/SKILL.md",
+    name: "animation-systems",
+    topics: ["motion", "systems", "frontend"],
+    description:
+      "Use when building a coherent animation system instead of one-off motion tweaks.",
+  },
+  {
+    slug: "animation-on-scroll",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/animation-on-scroll/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/animation-on-scroll/SKILL.md",
+    name: "animation-on-scroll",
+    topics: ["motion", "interaction", "frontend"],
+    description:
+      "Use when you need scroll-driven motion that feels intentional instead of noisy or overdone.",
+  },
+  {
+    slug: "gsap",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/gsap/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/gsap/SKILL.md",
+    name: "gsap",
+    topics: ["motion", "frontend", "interaction"],
+    description:
+      "Use when implementing motion with GSAP and you want practical animation structure and sequencing guidance.",
+  },
+  {
+    slug: "gsap-scrolltrigger-storytelling",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/gsap-scrolltrigger-storytelling/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/gsap-scrolltrigger-storytelling/SKILL.md",
+    name: "gsap-scrolltrigger-storytelling",
+    topics: ["motion", "interaction", "frontend"],
+    description:
+      "Use when building scroll-based storytelling sections with GSAP ScrollTrigger.",
+  },
+  {
+    slug: "threejs",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/threejs/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/threejs/SKILL.md",
+    name: "threejs",
+    topics: ["threejs", "motion", "frontend"],
+    description:
+      "Use when building 3D scenes, interactions, or WebGL-backed interface moments in Three.js.",
+  },
+  {
+    slug: "cobejs",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/cobejs/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/cobejs/SKILL.md",
+    name: "cobejs",
+    topics: ["3d", "visual", "frontend"],
+    description:
+      "Use when building lightweight animated globe or orb visuals with Cobe.",
+  },
+  {
+    slug: "matterjs",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/matterjs/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/matterjs/SKILL.md",
+    name: "matterjs",
+    topics: ["motion", "interaction", "frontend"],
+    description:
+      "Use when building physics-driven interactions and layout behaviors with Matter.js.",
+  },
+  {
+    slug: "progressive-blur",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/progressive-blur/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/progressive-blur/SKILL.md",
+    name: "progressive-blur",
+    topics: ["visual", "motion", "frontend"],
+    description:
+      "Use when applying blur transitions or layered depth effects that need to feel smooth and controlled.",
+  },
+  {
+    slug: "beautiful-shadows",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/beautiful-shadows/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/beautiful-shadows/SKILL.md",
+    name: "beautiful-shadows",
+    topics: ["visual", "craft", "frontend"],
+    description:
+      "Use when a UI needs better depth, elevation, and shadow treatment without looking muddy.",
+  },
+  {
+    slug: "company-logos",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/company-logos/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/company-logos/SKILL.md",
+    name: "company-logos",
+    topics: ["systems", "visual", "frontend"],
+    description:
+      "Use when laying out logos, trust rows, or brand collections in a clean and balanced way.",
+  },
+  {
+    slug: "container-lines",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/container-lines/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/container-lines/SKILL.md",
+    name: "container-lines",
+    topics: ["systems", "visual", "frontend"],
+    description:
+      "Use when using borders and container structure as part of the visual system.",
+  },
+  {
+    slug: "masked-reveal",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/masked-reveal/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/masked-reveal/SKILL.md",
+    name: "masked-reveal",
+    topics: ["motion", "visual", "frontend"],
+    description:
+      "Use when revealing content with masked motion, clipped transitions, or layered entrances.",
+  },
+  {
+    slug: "marquee-loop",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/marquee-loop/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/marquee-loop/SKILL.md",
+    name: "marquee-loop",
+    topics: ["motion", "interaction", "frontend"],
+    description:
+      "Use when building looping marquees that need steady rhythm, spacing, and performance awareness.",
+  },
+  {
+    slug: "webgl-landing-steering",
+    user: "MengTo",
+    repo: "Skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/webgl-landing-steering/SKILL.md",
+    githubUrl:
+      "https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/webgl-landing-steering/SKILL.md",
+    name: "webgl-landing-steering",
+    topics: ["threejs", "visual", "frontend"],
+    description:
+      "Use when steering a landing page around a WebGL centerpiece or hero experience.",
+  },
+  {
     slug: "fixing-accessibility",
     user: "ibelick",
     repo: "ui-skills",
