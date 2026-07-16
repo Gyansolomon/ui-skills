@@ -2261,6 +2261,110 @@ const registrySource: RegistrySourceSkill[] = [
     description:
       "Run an extremely strict maintainability review for abstraction quality, giant files, and spaghetti-condition growth.",
   },
+  {
+    slug: "effect",
+    user: "kitlangton",
+    repo: "skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/kitlangton/skills/main/skills/effect/SKILL.md",
+    githubUrl:
+      "https://github.com/kitlangton/skills/blob/main/skills/effect/SKILL.md",
+    name: "effect",
+    topics: ["architecture", "tooling", "testing"],
+    description:
+      "Opinionated guidance for building production TypeScript applications with Effect v4, including workflows, services, layers, schemas, configuration, scheduling, caching, streams, HTTP clients, and tests.",
+  },
+  {
+    slug: "gsap-web",
+    user: "iart-ai",
+    repo: "web-animation-skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/iart-ai/web-animation-skills/main/skills/gsap-web/SKILL.md",
+    githubUrl:
+      "https://github.com/iart-ai/web-animation-skills/blob/main/skills/gsap-web/SKILL.md",
+    name: "gsap-web",
+    topics: ["motion", "interaction", "frontend"],
+    description:
+      "GSAP guidance for code-driven web motion, including timelines, ScrollTrigger, SplitText, Flip, and smooth-scroll synchronization.",
+  },
+  {
+    slug: "60fps-animation",
+    user: "iart-ai",
+    repo: "web-animation-skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/iart-ai/web-animation-skills/main/skills/60fps-animation/SKILL.md",
+    githubUrl:
+      "https://github.com/iart-ai/web-animation-skills/blob/main/skills/60fps-animation/SKILL.md",
+    name: "60fps-animation",
+    topics: ["motion", "performance", "frontend"],
+    description:
+      "Web animation performance guidance for avoiding layout thrashing and reaching smooth 60/120fps motion with compositor-friendly techniques.",
+  },
+  {
+    slug: "accessible-animation",
+    user: "iart-ai",
+    repo: "web-animation-skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/iart-ai/web-animation-skills/main/skills/accessible-animation/SKILL.md",
+    githubUrl:
+      "https://github.com/iart-ai/web-animation-skills/blob/main/skills/accessible-animation/SKILL.md",
+    name: "accessible-animation",
+    topics: ["accessibility", "motion", "frontend"],
+    description:
+      "Tiered reduced-motion patterns for CSS, GSAP, Framer Motion, Lenis, and other web animation systems.",
+  },
+  {
+    slug: "micro-interaction",
+    user: "iart-ai",
+    repo: "web-animation-skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/iart-ai/web-animation-skills/main/skills/micro-interaction/SKILL.md",
+    githubUrl:
+      "https://github.com/iart-ai/web-animation-skills/blob/main/skills/micro-interaction/SKILL.md",
+    name: "micro-interaction",
+    topics: ["interaction", "motion", "frontend"],
+    description:
+      "UI motion guidance for hover and press feedback, toggles, toasts, drawers, modals, list transitions, and shared-element interactions.",
+  },
+  {
+    slug: "page-transition-animation",
+    user: "iart-ai",
+    repo: "web-animation-skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/iart-ai/web-animation-skills/main/skills/page-transition-animation/SKILL.md",
+    githubUrl:
+      "https://github.com/iart-ai/web-animation-skills/blob/main/skills/page-transition-animation/SKILL.md",
+    name: "page-transition-animation",
+    topics: ["motion", "interaction", "frontend"],
+    description:
+      "Page and route transition patterns using the View Transitions API and Framer Motion, including reliable Next.js App Router exits.",
+  },
+  {
+    slug: "svg-animation",
+    user: "iart-ai",
+    repo: "web-animation-skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/iart-ai/web-animation-skills/main/skills/svg-animation/SKILL.md",
+    githubUrl:
+      "https://github.com/iart-ai/web-animation-skills/blob/main/skills/svg-animation/SKILL.md",
+    name: "svg-animation",
+    topics: ["motion", "visual", "frontend"],
+    description:
+      "SVG animation techniques for stroke draw-on effects, path morphing, motion paths, animated icons, gradients, and filters.",
+  },
+  {
+    slug: "lottie-animation",
+    user: "iart-ai",
+    repo: "web-animation-skills",
+    rawUrl:
+      "https://raw.githubusercontent.com/iart-ai/web-animation-skills/main/skills/lottie-animation/SKILL.md",
+    githubUrl:
+      "https://github.com/iart-ai/web-animation-skills/blob/main/skills/lottie-animation/SKILL.md",
+    name: "lottie-animation",
+    topics: ["motion", "frontend", "tooling"],
+    description:
+      "Lottie and dotLottie integration guidance for playback control, interactivity, runtime theming, and cross-platform export workflows.",
+  },
 ];
 
 const buildInitialPathSlug = (entry: RegistrySourceSkill) => {
