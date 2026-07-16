@@ -5,19 +5,18 @@ import Button from "../ui/button.astro";
 import CodeBlock from "../ui/code-block.astro";
 import SkillCard from "../ui/skill-card.astro";
 
-const MAX_SKILLS = 18;
+const MAX_SKILLS = 20;
 
 const FEATURED_PATH_SLUGS = [
   "ibelick/ui-skills-root",
-  "ibelick/baseline-ui",
-  "ibelick/fixing-accessibility",
-  "ibelick/fixing-motion-performance",
+  "ibelick/improve-ui",
   "anthropics/frontend-design",
-  "wshobson/wcag-audit-patterns",
-  "emilkowalski/emil-design-eng",
-  "millionco/react-doctor",
+  "mengto/design-taste-frontend",
+  "emilkowalski/improve-animations",
+  "millionco/improve-react",
+  "shadcn/improve",
   "shadcn-ui/shadcn",
-  "jakubkrehel/make-interfaces-feel-better",
+  "jakubkrehel/better-ui",
   "0xdesign/design-lab",
   "nextlevelbuilder/ui-ux-pro-max",
   "dammyjay93/interface-design",
@@ -25,8 +24,10 @@ const FEATURED_PATH_SLUGS = [
   "pbakaus/impeccable",
   "bencium/bencium-innovative-ux-designer",
   "leonxlnx/gpt-tasteskill",
-  "zarazhangrui/frontend-slides",
-  "dimillian/swiftui-ui-patterns",
+  "antfu/web-design-guidelines",
+  "rams/rams",
+  "wshobson/interaction-design",
+  "addyosmani/frontend-ui-engineering",
 ] as const;
 
 const skillByPathSlug = new Map(skills.map((skill) => [skill.pathSlug, skill]));
