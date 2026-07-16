@@ -6,6 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.ui-skills.com",
+  trailingSlash: "ignore",
   output: "server",
   adapter: cloudflare({ imageService: "compile" }),
   integrations: [react()],

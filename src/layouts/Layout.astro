@@ -40,9 +40,7 @@ const {
 const canonicalPath =
   Astro.url.pathname === "/"
     ? "/"
-    : Astro.url.pathname.endsWith("/")
-      ? Astro.url.pathname
-      : `${Astro.url.pathname}/`;
+    : Astro.url.pathname.replace(/\/+$/, "");
 const canonicalUrl = new URL(
   canonicalPath,
   Astro.site ?? "https://www.ui-skills.com",

@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import { skills, type Skill } from "../data/skills";
+import { agents } from "../data/agents";
 
 const SITE_URL = "https://www.ui-skills.com";
 
@@ -35,18 +36,25 @@ const buildGroupPaths = (allSkills: Skill[]) =>
 export const GET: APIRoute = ({ site }) => {
   const origin = site?.origin ?? SITE_URL;
 
-  const staticRoutes = ["/", "/skills", "/skills/topics"];
+  const staticRoutes = ["/", "/skills", "/skills/topics", "/agents"];
   const topicRoutes = buildTopicRoutes(skills);
   const groupRoutes = buildGroupPaths(skills).map((path) => `/skills/${path}`);
   const skillRoutes = skills.map((skill) => `/skills/${skill.pathSlug}`);
+  const agentRoutes = agents.map((agent) => `/agents/${agent.id}`);
   const allRoutes = Array.from(
-    new Set([...staticRoutes, ...topicRoutes, ...groupRoutes, ...skillRoutes]),
+    new Set([
+      ...staticRoutes,
+      ...topicRoutes,
+      ...groupRoutes,
+      ...skillRoutes,
+      ...agentRoutes,
+    ]),
   );
 
   const urlset = allRoutes
     .map((route) => {
       const normalizedRoute =
-        route === "/" ? "/" : route.endsWith("/") ? route : `${route}/`;
+        route === "/" ? "/" : route.replace(/\/+$/, "");
       const loc = new URL(normalizedRoute, origin).toString();
       return `<url><loc>${escapeXml(loc)}</loc></url>`;
     })
